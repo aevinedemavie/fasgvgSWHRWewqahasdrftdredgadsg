@@ -597,7 +597,7 @@ function chloex(msg, delay, color, title, desc)
         Title = title or "Trix",
         Description = desc or "Notification",
         Content = msg or "Content",
-        Color = color or Color3.fromRGB(0, 255, 0),
+        Color = color or Color3.fromRGB(255, 40, 40),
         Delay = delay or 4
     })
 end
@@ -1166,13 +1166,13 @@ function Chloex:Window(GuiConfig)
     UICorner36.CornerRadius = UDim.new(0, 3)
     UICorner36.Parent = DropdownSelect
 
-    UIStroke14.Color = Color3.fromRGB(0, 255, 0)
+    UIStroke14.Color = Color3.fromRGB(255, 40, 40)
     UIStroke14.Thickness = 2.5
     UIStroke14.Transparency = 0.8
     UIStroke14.Parent = DropdownSelect
 
     DropdownSelectReal.AnchorPoint = Vector2.new(0.5, 0.5)
-    DropdownSelectReal.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+    DropdownSelectReal.BackgroundColor3 = Color3.fromRGB(255, 40, 40)
     DropdownSelectReal.BackgroundTransparency = 0.7
     DropdownSelectReal.BorderColor3 = Color3.fromRGB(0, 0, 0)
     DropdownSelectReal.BorderSizePixel = 0
@@ -2882,7 +2882,7 @@ function Chloex:Window(GuiConfig)
                                 StatusParagraph:SetContent("Current: " .. selectedConfigName .. " | Autoload: " .. (GetAutoload() or "None"))
                             end
                         else
-                            chloex("Please enter a config name", 3, Color3.fromRGB(0, 255, 0))
+                            chloex("Please enter a config name", 3, Color3.fromRGB(255, 100, 100))
                         end
                     end,
                     SubCallback = function()
@@ -2891,10 +2891,10 @@ function Chloex:Window(GuiConfig)
                                 chloex("Config loaded: " .. selectedConfigName, 3, Color3.fromRGB(100, 255, 100))
                                 StatusParagraph:SetContent("Current: " .. selectedConfigName .. " | Autoload: " .. (GetAutoload() or "None"))
                             else
-                                chloex("Failed to load: " .. selectedConfigName, 3, Color3.fromRGB(0, 255, 0))
+                                chloex("Failed to load: " .. selectedConfigName, 3, Color3.fromRGB(255, 100, 100))
                             end
                         else
-                            chloex("Please select a config", 3, Color3.fromRGB(0, 255, 0))
+                            chloex("Please select a config", 3, Color3.fromRGB(255, 100, 100))
                         end
                     end
                 })
@@ -2910,7 +2910,7 @@ function Chloex:Window(GuiConfig)
                             task.wait(0.5)
 
                             if DeleteConfig(selectedConfigName) then
-                                chloex("Config deleted: " .. selectedConfigName, 3, Color3.fromRGB(0, 255, 0))
+                                chloex("Config deleted: " .. selectedConfigName, 3, Color3.fromRGB(255, 100, 100))
                                 selectedConfigName = ""
                                 ConfigNameInput:Set("")
 
@@ -2920,7 +2920,7 @@ function Chloex:Window(GuiConfig)
                                 StatusParagraph:SetContent("Current: " .. (CurrentConfigName or "None") .. " | Autoload: " .. (GetAutoload() or "None"))
                             end
                         else
-                            chloex("Please select a config to delete", 3, Color3.fromRGB(0, 255, 0))
+                            chloex("Please select a config to delete", 3, Color3.fromRGB(255, 100, 100))
                         end
                     end,
                     SubCallback = function()
@@ -2929,7 +2929,7 @@ function Chloex:Window(GuiConfig)
                             chloex("Autoload set to: " .. selectedConfigName, 3, Color3.fromRGB(100, 200, 255))
                             StatusParagraph:SetContent("Current: " .. (CurrentConfigName or "None") .. " | Autoload: " .. selectedConfigName)
                         else
-                            chloex("Please enter a config name", 3, Color3.fromRGB(0, 255, 0))
+                            chloex("Please enter a config name", 3, Color3.fromRGB(255, 100, 100))
                         end
                     end
                 })
